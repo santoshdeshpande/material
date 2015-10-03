@@ -78,10 +78,12 @@ function MdTooltipDirective($timeout, $window, $$rAF, $document, $mdUtil, $mdThe
     }
 
     function getTransformOrigin (direction) {
-      return direction === 'left' ? 'right center' :
-             direction === 'right' ? 'left center' :
-             direction === 'top' ? 'center bottom' :
-             'center top';
+      switch (direction) {
+        case 'left': return 'right center';
+        case 'right': return 'left center';
+        case 'top': return 'center bottom';
+        case 'bottom': return 'center top';
+      }
     }
 
     function configureWatchers () {
