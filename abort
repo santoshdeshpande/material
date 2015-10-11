@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+git reset --hard
+git checkout staging
+rm abort push
+git branch -D release/0.11.1-rc1
+git checkout package.json
+git checkout CHANGELOG.md
+rm -rf bower-material
+rm -rf code.material.angularjs.org
